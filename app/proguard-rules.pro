@@ -199,7 +199,7 @@ public static java.lang.String TABLENAME;
 -dontwarn com.tbruyelle.rxpermissions.**
 
 # 保留JS方法不被混淆
--keepclassmembers class clem.www.tbsradio.MainActivity$JSInterface1 {
+-keepclassmembers class clem.www.tbsradio.ui.MainActivity$JSInterface1 {
     <methods>;
 }
 
