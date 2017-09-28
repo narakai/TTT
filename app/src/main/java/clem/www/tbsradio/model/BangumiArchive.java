@@ -71,6 +71,15 @@ public class BangumiArchive {
         private String detail;
         private String radioUrl;
 
+        public String getCode(){
+            String code = "";
+            int index = radioUrl.lastIndexOf("/");
+            if (index != -1) {
+                code = radioUrl.substring(index + 1, radioUrl.length());
+            }
+            return code;
+        }
+
         public String getDate() {
             return date;
         }

@@ -17,6 +17,8 @@ import clem.www.tbsradio.model.BangumiItem;
 
 public class HtmlParser {
 
+    public static final String HTML = "http://d2zpt661x1y9iz.cloudfront.net/www.spiral-pf.com/music/";
+
     public static List<BangumiItem> getBangumiItem(String html) {
         List<BangumiItem> bangumiItems = new ArrayList<>();
         Document doc = Jsoup.parse(html);

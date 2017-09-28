@@ -10,13 +10,15 @@ import retrofit2.http.Path;
 
 public interface ChannelService {
 
+    @GET("indexLPSD")
+    Observable<String> getByRefresh();
+
     @GET("indexLBCD")
-    Observable<String> getFoodList();
+    Observable<String> getByDate();
 
     @GET("archive/{bangumiName}")
     Observable<String> getBangumiArchive(@Path("bangumiName") String bangumiName);
 
     @GET("{bangumiName}")
-    Observable<String> getBangumiHome(@Path("bangumiName") String bangumiName);
-
+    Observable<String> getBangumiArticle(@Path("bangumiName") String bangumiName);
 }

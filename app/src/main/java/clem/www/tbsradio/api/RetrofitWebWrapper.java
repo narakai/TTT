@@ -9,11 +9,11 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  * 博客: http://blog.csdn.net/u014316462
  * 作用：FoodService的Retrofit包装类
  */
-public class RetrofitWrapper {
-    public static RetrofitWrapper instance;
+public class RetrofitWebWrapper {
+    public static RetrofitWebWrapper instance;
     public static Retrofit retrofit;
 
-    private RetrofitWrapper() {
+    private RetrofitWebWrapper() {
         retrofit = new Retrofit.Builder()
                 .baseUrl(Constant.BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -21,10 +21,10 @@ public class RetrofitWrapper {
                 .build();
     }
 
-    public static RetrofitWrapper getInstance() {
+    public static RetrofitWebWrapper getInstance() {
         if (instance == null) {
-            synchronized (RetrofitWrapper.class) {
-                instance = new RetrofitWrapper();
+            synchronized (RetrofitWebWrapper.class) {
+                instance = new RetrofitWebWrapper();
             }
         }
         return instance;
@@ -34,8 +34,8 @@ public class RetrofitWrapper {
         return retrofit.create(service);
     }
 
-    public class Constant {
-        public static final String BASE_URL = "https://radiocloud.jp/";
+    private static class Constant {
+        private static final String BASE_URL = "https://radiocloud.jp/";
     }
 }
 
