@@ -1,5 +1,6 @@
 package clem.www.tbsradio.ui;
 
+import android.media.MediaMetadataRetriever;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -128,6 +129,16 @@ public class MainActivity extends AppCompatActivity {
                         String id = s.substring(index + 7, index + 20);
                         Log.d(TAG, "onNext: " + id);
                         String address = HtmlParser.HTML + id + "/audio.m4a";
+
+
+//                        MediaMetadataRetriever mmr = new MediaMetadataRetriever();
+//                        try {
+//                            mmr.setDataSource(address);
+//                            String sss = mmr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
+//                            Log.d(TAG, "onNext: " + sss);
+//                        } catch (IllegalArgumentException e) {
+//                            e.printStackTrace();
+//                        }
                     }
 
                     @Override
